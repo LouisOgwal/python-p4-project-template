@@ -7,7 +7,7 @@ function CreateProductForm({ setProducts }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/products", { name, description })
+    axios.post("http://localhost:5555/products", { name, description })
       .then(response => {
         setProducts(prevProducts => [...prevProducts, response.data]);
         setName("");

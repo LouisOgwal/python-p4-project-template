@@ -2,12 +2,13 @@
 Apple Store Manager is a full-stack web application that allows users to manage Apple product inventory, store locations, and pricing. The application is built using React for the frontend and Flask for the backend, with PostgreSQL as the database.
 
 ## Features
-- **Product Management**: Add, view, and delete Apple products.
-- **Store Management**: Add, view, and delete store locations.
-- **Store-Product Relations**: Assign products to stores with pricing details.
-- **Serialization**: Data is structured and transferred efficiently using Marshmallow.
-- **API Endpoints**: RESTful API with CRUD operations for products, stores, and store-product relationships.
-- **CORS Handling**: 
+- Product Management: Add, view, and delete Apple products.
+- Store Management: Add, view, and delete store locations.
+- Store-Product Relations**: Assign products to stores with pricing details.
+- Serialization: Data is structured and transferred efficiently using Marshmallow.
+- API Endpoints: RESTful API with CRUD operations for products, stores, and store-product relationships.
+- CORS Handling: 
+
 # Backend:
 - Python
 - Flask
@@ -44,12 +45,12 @@ Install dependencies:
 
 ## API Endpoints
 
- GET, /products | Get all products |
- POST, /products | Create a new product |
- DELETE, | /products/:id | Delete a product |
- GET, /stores | Get all stores |
- DELETE, | /stores/:id | Delete a store |
- POST,/store_products | Add a product to a store with price |
+ GET, /products, Get all products 
+ POST, /products, Create a new product 
+ DELETE, | /products/:id. Delete a product 
+ GET, /stores, Get all stores 
+ DELETE, | /stores/:id, Delete a store 
+ POST,/store_products, Add a product to a store with price
 
 # Deployment
 - Frontend: Deployed on Vercel

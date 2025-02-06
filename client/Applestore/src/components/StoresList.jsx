@@ -7,7 +7,7 @@ const StoresList = () => {
 
 
   useEffect(() => {
-    fetch("http://localhost:5000/stores")
+    fetch("http://localhost:5555/stores")
       .then((res) => res.json())
       .then((data) => setStores(data))
       .catch((error) => console.error("Error fetching stores:", error));
@@ -15,7 +15,7 @@ const StoresList = () => {
 
   
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/stores/${id}`, {
+    fetch(`http://localhost:5555/stores/${id}`, {
       method: "DELETE",
     })
       .then((res) => {
