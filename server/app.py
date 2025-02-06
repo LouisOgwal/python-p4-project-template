@@ -5,11 +5,11 @@ from flask_restful import Api, Resource
 from models import db, bcrypt, User, Product, Store, StoreProduct
 from config import Config
 
-# Initialize Flask app
+
 app = Flask(__name__)
 app.config.from_object(Config)
 
-# Initialize extensions
+
 db.init_app(app)
 bcrypt.init_app(app)
 migrate = Migrate(app, db)
@@ -20,9 +20,7 @@ api = Api(app)
 def index():
     return '<h1>Project Server Running</h1>'
 
-# ---------------------
-# PRODUCT ENDPOINTS
-# ---------------------
+
 class ProductListResource(Resource):
     def get(self):
         products = Product.query.all()
@@ -49,9 +47,7 @@ class ProductResource(Resource):
         db.session.commit()
         return jsonify({"message": "Product deleted"}), 200
 
-# ---------------------
-# STORE ENDPOINTS
-# ---------------------
+
 class StoreListResource(Resource):
     def get(self):
         stores = Store.query.all()
@@ -78,9 +74,7 @@ class StoreResource(Resource):
         db.session.commit()
         return jsonify({"message": "Store deleted"}), 200
 
-# ---------------------
-# STORE-PRODUCT RELATIONSHIP ENDPOINTS
-# ---------------------
+
 class StoreProductResource(Resource):
     def post(self):
         try:
@@ -95,9 +89,7 @@ class StoreProductResource(Resource):
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
-# ---------------------
-# REGISTER API RESOURCES
-# ---------------------
+
 api.add_resource(ProductListResource, "/products")
 api.add_resource(ProductResource, "/products/<int:product_id>")
 api.add_resource(StoreListResource, "/stores")

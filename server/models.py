@@ -3,7 +3,7 @@ from sqlalchemy.ext.associationproxy import association_proxy
 from flask_bcrypt import Bcrypt
 from config import db
 
-# Initialize Bcrypt
+
 bcrypt = Bcrypt()
 
 class User(db.Model, SerializerMixin):

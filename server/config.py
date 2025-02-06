@@ -12,11 +12,10 @@ class Config:
     SECRET_KEY = os.getenv("SECRET_KEY", "mysecretkey")
     JSON_COMPACT = False
 
-# Instantiate app, set attributes
+
 app = Flask(__name__)
 app.config.from_object(Config)
 
-# Define metadata, instantiate db
 metadata = MetaData(naming_convention={
     "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
 })
@@ -24,8 +23,5 @@ db = SQLAlchemy(metadata=metadata)
 db.init_app(app)
 migrate = Migrate(app, db)
 
-# Instantiate REST API
 api = Api(app)
-
-# Instantiate CORS
 CORS(app)
