@@ -1,7 +1,7 @@
 # Apple Store Manager
 Apple Store Manager is a full-stack web application that allows users to manage Apple product inventory, store locations, and pricing. The application is built using React for the frontend and Flask for the backend, with PostgreSQL as the database.
 
-## Features
+# Features
 - Product Management: Add, view, and delete Apple products.
 - Store Management: Add, view, and delete store locations.
 - Store-Product Relations**: Assign products to stores with pricing details.
@@ -15,7 +15,7 @@ Apple Store Manager is a full-stack web application that allows users to manage 
 - Flask-RESTful
 - Flask-SQLAlchemy
 - Flask-Marshmallow
-- PostgreSQL (or SQLite for development)
+- PostgreSQL 
 - Flask-CORS
 
 # Frontend:
@@ -34,7 +34,7 @@ Set up the database:
  Run the Flask application:
    python app.py
 
-### Frontend Setup:
+# Frontend Setup:
    frontend
 Install dependencies:
 
@@ -43,7 +43,7 @@ Install dependencies:
    npm start
   
 
-## API Endpoints
+# API Endpoints
 
  GET, /products, Get all products 
  POST, /products, Create a new product 
@@ -64,6 +64,7 @@ Install dependencies:
 
 -Louis Ogwal - Developer
 
+DEPLOYMENT LINKS
 
 VITE_API_URL=https://applestore-cdyy.onrender.com
 
