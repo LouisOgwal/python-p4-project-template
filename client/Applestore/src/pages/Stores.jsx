@@ -5,7 +5,7 @@ function Stores() {
   const [stores, setStores] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5555/stores")
+    axios.get("https://applestore-cdyy.onrender.com/stores")
       .then(response => setStores(response.data))
       .catch(error => console.error("Error fetching stores:", error));
   }, []);

@@ -7,7 +7,7 @@ function CreateProductForm({ setProducts }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5555/products", { name, description })
+    axios.post("https://applestore-cdyy.onrender.com/products", { name, description })
       .then(response => {
         setProducts(prevProducts => [...prevProducts, response.data]);
         setName("");

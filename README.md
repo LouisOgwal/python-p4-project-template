@@ -65,4 +65,8 @@ Install dependencies:
 -Louis Ogwal - Developer
 
 
+VITE_API_URL=https://applestore-cdyy.onrender.com
+
+
+DATABASE_URL=postgresql://applestore_db_user:ZjkyJQvpqwB4nJXOBbX2lf6a1MTin8Zm@dpg-cuiit88gph6c73abm76g-a.oregon-postgres.render.com/applestore_db
 

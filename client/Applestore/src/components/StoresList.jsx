@@ -7,7 +7,7 @@ const StoresList = () => {
 
 
   useEffect(() => {
-    fetch("http://localhost:5555/stores")
+    fetch("https://applestore-cdyy.onrender.com/stores")
       .then((res) => res.json())
       .then((data) => setStores(data))
       .catch((error) => console.error("Error fetching stores:", error));
@@ -15,7 +15,7 @@ const StoresList = () => {
 
   
   const handleDelete = (id) => {
-    fetch(`http://localhost:5555/stores/${id}`, {
+    fetch(`https://applestore-cdyy.onrender.com/stores/${id}`, {
       method: "DELETE",
     })
       .then((res) => {

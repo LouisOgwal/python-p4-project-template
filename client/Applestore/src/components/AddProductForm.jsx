@@ -8,7 +8,7 @@ function AddProductForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5555/store_products", { price, product_id: productId, store_id: storeId })
+    axios.post("https://applestore-cdyy.onrender.com/store_products", { price, product_id: productId, store_id: storeId })
       .then(response => console.log("Added:", response.data))
       .catch(error => console.error("Error adding product:", error));
   };

@@ -2,7 +2,7 @@ import axios from "axios";
 
 function ProductList({ products, setProducts }) {
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5555/products/${id}`)
+    axios.delete(`https://applestore-cdyy.onrender.com/products/${id}`)
       .then(() => setProducts(prev => prev.filter(product => product.id !== id)))
       .catch(error => console.error("Error deleting product:", error));
   };
