@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-app.config.from_object(Config)
+app.config.from_object(server.config.Config)
 
 db.init_app(app)
 bcrypt.init_app(app)

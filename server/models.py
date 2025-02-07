@@ -1,10 +1,17 @@
+from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
 from sqlalchemy_serializer import SerializerMixin
 from sqlalchemy.ext.associationproxy import association_proxy
-from flask_bcrypt import Bcrypt
-from config import db
 
 
+db = SQLAlchemy()
 bcrypt = Bcrypt()
+
+class Category(db.Model):
+    __tablename__ = "categories"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), nullable=False, unique=True)
 
 class User(db.Model, SerializerMixin):
     __tablename__ = "users"
@@ -29,6 +36,10 @@ class Product(db.Model, SerializerMixin):
     description = db.Column(db.Text, nullable=True)
 
     store_products = db.relationship("StoreProduct", back_populates="product", cascade="all, delete-orphan")
+    stores = association_proxy("store_products", "store")
+
+    category_id = db.Column(db.Integer, db.ForeignKey('categories.id'))
+    category = db.relationship('Category', backref=db.backref('products', lazy=True))
 
 class Store(db.Model, SerializerMixin):
     __tablename__ = "stores"
@@ -38,6 +49,7 @@ class Store(db.Model, SerializerMixin):
     address = db.Column(db.String(200), nullable=False)
 
     store_products = db.relationship("StoreProduct", back_populates="store", cascade="all, delete-orphan")
+    products = association_proxy("store_products", "product")
 
 class StoreProduct(db.Model, SerializerMixin):
     __tablename__ = "store_products"
