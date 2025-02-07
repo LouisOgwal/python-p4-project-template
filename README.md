@@ -62,7 +62,7 @@ Install dependencies:
 - Implement unit tests for backend endpoints.
 - Integrate payment processing for store purchases.
 
--Louis Ogwal - Developer
+-LouisOgwal - Developer
 
 DEPLOYMENT LINKS
 
